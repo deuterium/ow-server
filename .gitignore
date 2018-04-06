@@ -4,3 +4,5 @@
 .Python
 pip-selfcheck.json
 .env
+*.pyc
+run.sh
