@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'main page'
+	with io.open('clientdata/json.txt', 'r', encoding='utf-8') as f:
+		return f.read()
 
 @app.route('/api/client/submit', methods=['POST']) 
 def foo():
