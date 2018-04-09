@@ -14,7 +14,7 @@ def hello():
 def foo():
     if not request.json:
         abort(400)
-    with io.open('clientdata/json.txt', 'a', encoding='utf-8') as f:
+    with open('clientdata/json.txt', 'a', encoding='utf-8') as f:
         f.write("%s\n" % json.dumps(request.get_json(), ensure_ascii=False))
     return jsonify(request.get_json())
 
