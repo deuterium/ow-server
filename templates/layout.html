@@ -14,24 +14,28 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-    <div class="container">
-        <div class="row bg-info rounded-top">
-            <div class="col my-2">
-                <span class="">Menu Item</span>
-            </div>
-            <div class="col my-2 text-right">
-                    {% if username %}
-                        Hello {{ username }} | Logout
-                    {% else %}
-                        Login
-                    {% endif %}
+    <div class="row bg-info p-2">
+        <div class="col ">
+            <span class="">Menu Item</span>
+        </div>
+        <div class="col text-right">
+                {% if username %}
+                    Hello {{ username }} | Logout
+                {% else %}
+                    Login
+                {% endif %}
+        </div>
+    </div>
+    <div class="row bg-danger py-1">
+        <div class="col">
+            <div class="container">
+                this is the menu area {% block submenu %}{% endblock %}
             </div>
         </div>
-        <div class="row bg-danger">
-            <div class="col my-1">this is the menu area {% block submenu %}{% endblock %}</div>
-        </div>
-        <div class="row bg-secondary">
-            <div class="col">
+    </div>
+    <div class="row bg-secondary">
+        <div class="col">
+            <div class="container">
                 <div class="row"> 
                     <div class="col mt-1">
                         {% if flashed_message %}
@@ -40,19 +44,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col mb-1">{% block content %}{% endblock %}</div>
+                    <div class="col">{% block content %}{% endblock %}</div>
                 </div>
             </div>
         </div>
-        <div class="row bg-info rounded-bottom">
-            <div class="col my-1 text-center">
-            
-            <small><a href="{{ url_for('about') }}">about ow</a>{% block footer %}{% endblock %}</small>
-            </div>
-        </div>
-        </div>
     </div>
-    
+    <div class="row bg-info rounded-bottom p-1">
+        <div class="col text-center">
+            <small><a href="{{ url_for('about') }}">about ow</a>{% block footer %}{% endblock %}</small>
+        </div>
+    </div>    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
