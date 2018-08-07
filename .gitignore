@@ -8,3 +8,4 @@ pip-selfcheck.json
 run.sh
 /clientdata
 .idea
+pyvenv.cfg
