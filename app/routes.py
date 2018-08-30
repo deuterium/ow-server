@@ -1,15 +1,14 @@
 from app import app
-from functools import wraps
 from flask import render_template, url_for, flash, get_flashed_messages, request, redirect, abort, session, g
+from flask_restful import Api
+from app.objects import CVEProduct, CVEVendor, CVEID
+from app.authentication import auth
 
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if not ValidToken(session.get('loginToken')):
-            #redirect to login page
-            print("login_required decorater")
-        return f(*args, **kwargs)
-    return decorated_function
+api = Api(app)
+
+api.add_resource(CVEVendor  , '/api/cve/vendor')
+api.add_resource(CVEID      , '/api/cve/<string:cve_id>')
+api.add_resource(CVEProduct , '/api/cve/product/<string:product_id>')
 
 def ValidToken(t):
     if t is None:
@@ -31,7 +30,7 @@ def hello():
     return render_template("test.html")
 
 @app.route('/about')
-@login_required
+@auth.login_required
 def about():
     return render_template("about.html")
 
