@@ -1,7 +1,9 @@
 from ares import CVESearch
-from flask_restful import Resource
+from flask_restful import Resource, Api
+from app.authentication import auth
 
 class CVEVendor(Resource):
+    @auth.login_required
     def get(self):
         cve = CVESearch()
         return cve.browse('microsoft')
