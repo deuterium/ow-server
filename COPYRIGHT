@@ -1,2 +1,7 @@
-Ares    Copyright 2014-2018 Martin Simon        https://github.com/barnumbirr/ares
-Flask   Copyright © 2010 by the Pallets team    https://github.com/pallets/flask
+Ares        Copyright 2014-2018 Martin Simon            https://github.com/barnumbirr/ares
+argon2_cffi Copyright 2006-2013 Alexander Chemeris      https://github.com/hynek/argon2_cffi
+Flask       Copyright 2010 by the Pallets team          https://github.com/pallets/flask
+Flask-HTTPAuth Copyright (c) 2013 Miguel Grinberg       https://github.com/miguelgrinberg/Flask-HTTPAuth
+
+
+go through all flask plugins
